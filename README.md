@@ -1,2 +1,2 @@
 # Kinoverwaltung
-Kinoverwaltung Software in PHP
+## Kinoverwaltung Software in PHP
