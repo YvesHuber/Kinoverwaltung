@@ -1,3 +1,4 @@
 <?php
 
-$connection = new mysqli('localhost', '', '', 'kino');
+$connection = new mysqli('localhost', 'root', '', 'kino');
+
