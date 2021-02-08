@@ -9,11 +9,11 @@
 -id Zeit
 --
 -Film Anzeigen
--Film Ändern</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>250</y><w>210</w><h>140</h></coordinates><panel_attributes>Sitzplätze
+-Film Ändern</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>250</y><w>210</w><h>140</h></coordinates><panel_attributes>Sitzplätze
 --
 -id Platz
 -idfs Film
 -id Zeit
 --
 -Plätze Anzeigen
--Platz reservieren</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>140</y><w>160</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>140</y><w>120</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;110</additional_attributes></element></diagram>
+-Platz reservieren</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>140</y><w>160</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>140</y><w>130</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;110;110</additional_attributes></element></diagram>
