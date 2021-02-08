@@ -8,17 +8,17 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema kino
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema kino
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `kino` DEFAULT CHARACTER SET utf8 ;
 USE `kino` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Film`
+-- Table `kino`.`Film`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kino`.`Film` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -29,7 +29,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`User`
+-- Table `kino`.`User`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kino`.`User` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -41,7 +41,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Saal`
+-- Table `kino`.`Saal`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kino`.`Saal` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -53,12 +53,12 @@ CREATE TABLE IF NOT EXISTS `kino`.`Saal` (
   `film_id_fs` int(11) NOT NULL,
   CONSTRAINT `film_id_fs`
     FOREIGN KEY (`film_id_fs`)
-    REFERENCES `mydb`.`Film` (`id`)
+    REFERENCES `kino`.`Film` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `user_id_fs`
     FOREIGN KEY (`user_id_fs`)
-    REFERENCES `mydb`.`User` (`id`)
+    REFERENCES `kino`.`User` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
