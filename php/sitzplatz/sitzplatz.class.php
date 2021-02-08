@@ -4,45 +4,58 @@ class sitzplatz
 
     private $firstname;
     private $lastname;
+    private $connection;
 
-    public function __construct($firstname, $lastname,$saalid,$placeid,$filmid)
+    public function __construct($firstname, $lastname, $saalid, $placeid, $filmid, $connection)
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->idsaal = $saalid;
         $this->idplatz = $placeid;
         $this->film = $filmid;
+        $this->connection = $connection;
     }
 
-    public function Registeruser($connection)
+    public function Registeruser()
     {
-        $sql = "INSERT INTO user (vorname, nachname)VALUES ('$this->firstname','$this->lastname');";
+        echo "started";
+        $check = false;
+        $this->check = $check;
+        if ($this->firstname != "SELECT vorname FROM `user` WHERE (vorname) VALUE ('$this->firstname')" || $this->lastname != "SELECT nachname FROM `user` WHERE (nachname) VALUE ('$this->lastname')") {
+            $this->check = true;
+        }
+        if ($this->check == true) {
 
-        echo "inserted";
+            $sql = "INSERT INTO user (vorname, nachname)VALUES ('$this->firstname','$this->lastname');";
 
-        $result = $connection->query($sql);
+            echo "inserted";
 
-        if (!$result) {
-            echo mysqli_error($connection);
-            die($connection->error);
+            $result = $this->connection->query($sql);
+
+            if (!$result) {
+                echo mysqli_error($this->connection);
+                die($this->connection->error);
+            }
         }
     }
-    public function Register_Place($connection)
+    public function Register_Place()
     {
-        $userfs = "SELECT id FROM `user` WHERE (vorname, nachname) VALUES ('$this->firstname','$this->lastname');";
-        $id = $connection->query($userfs);
+        if ($this->check == true) {
+            $userfs = "v, nachname) VALUES ('$this->firstname','$this->lastname');";
+            $id = $this->connection->query($userfs);
 
-        $filmfs = "SELECT id FROM `film` WHERE (name) VALUES ('$this->film');";
-        $idf = $connection->query($filmfs);
+            $filmfs = "SELECT id FROM `film` WHERE (name) VALUES ('$this->film');";
+            $idf = $this->connection->query($filmfs);
 
 
-        $sql = "INSERT INTO saal WHERE (platz_nummer,user_id_fs,film_id_fs, saal_id) VALUES ('$this->idplatz','$userfs',$idf,$id);";
+            $sql = "INSERT INTO saal WHERE (platz_nummer,film_id_fs, saal_id) VALUES ('$this->idplatz',$idf,$id);";
 
-        $result = $connection->query($sql);
+            $result = $this->connection->query($sql);
 
-        if (!$result) {
-            echo mysqli_error($connection);
-            die($connection->error);
+            if (!$result) {
+                echo mysqli_error($this->connection);
+                die($this->connection->error);
+            }
         }
     }
 

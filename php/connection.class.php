@@ -10,6 +10,3 @@ if ($connection->connect_error) {
     else {
         echo "Connection successful";
     }
-
-$new = new Saal($connection);
-?>
