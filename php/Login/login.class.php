@@ -13,17 +13,21 @@ class Login
         $this->save = "data.json";
     }
 
-    public function Login_Admin()
+    public function compare_values()
     {
-        $jsondecode = file_get_contents($this->save);
-        $decoded = json_decode($jsondecode, true);
+
+        if (file_exists($this->save)) {
+            $json = file_get_contents($this->save);
+        }
+        $decoded = json_decode($json, true);
+
         for ($i = 0; $i < count($decoded); $i++) {
-
-
             if ($this->username == ($decoded)[$i][0]['Adminusername'] && $this->password == ($decoded)[$i][0]['Adminpassword']) {
-                echo "logged in";
-            } else {
-                echo "ACCES DINED";
+                echo "You are now logged in Welcome " . $this->username;
+                return true;
+            }
+            else {
+                return false;
             }
         }
     }
