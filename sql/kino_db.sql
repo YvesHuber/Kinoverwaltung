@@ -14,13 +14,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `kino` DEFAULT CHARACTER SET utf8 ;
+USE `kino` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Film`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Film` (
+CREATE TABLE IF NOT EXISTS `kino`.`Film` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idFilme_UNIQUE` (`id` ASC),
@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`User`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`User` (
+CREATE TABLE IF NOT EXISTS `kino`.`User` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `iduser_UNIQUE` (`id` ASC),
@@ -43,7 +43,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Saal`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Saal` (
+CREATE TABLE IF NOT EXISTS `kino`.`Saal` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idSaal_UNIQUE` (`id` ASC),
