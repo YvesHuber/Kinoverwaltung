@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `kino`.`Saal` (
   `zeit` varchar(5) NOT NULL,
   `user_id_fs` int(10)  NOT NULL,
   `film_id_fs` int(11) NOT NULL,
+  `saal_id` int(11) NOT NULL,
   CONSTRAINT `film_id_fs`
     FOREIGN KEY (`film_id_fs`)
     REFERENCES `kino`.`Film` (`id`)
