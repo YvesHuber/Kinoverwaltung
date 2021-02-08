@@ -20,18 +20,19 @@ USE `kino` ;
 -- -----------------------------------------------------
 -- Table `kino`.`Film`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kino`.`Film` (
+CREATE TABLE IF NOT EXISTS `kino`.`film` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idFilme_UNIQUE` (`id` ASC),
-  `name` varchar(255) NOT NULL)
+  `name` varchar(255) NOT NULL,
+  `zeit` varchar(6) NOT NULL)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `kino`.`User`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kino`.`User` (
+CREATE TABLE IF NOT EXISTS `kino`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `iduser_UNIQUE` (`id` ASC),
@@ -43,12 +44,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `kino`.`Saal`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kino`.`Saal` (
+CREATE TABLE IF NOT EXISTS `kino`.`saal` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idSaal_UNIQUE` (`id` ASC),
   `platz_nummer` INT NOT NULL,
-  `zeit` varchar(5) NOT NULL,
   `user_id_fs` int(10)  NOT NULL,
   `film_id_fs` int(11) NOT NULL,
   `saal_id` int(11) NOT NULL,
@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `kino`.`Saal` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

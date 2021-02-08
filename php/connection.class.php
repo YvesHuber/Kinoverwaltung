@@ -1,5 +1,6 @@
 <?php
 
+
 $connection = new mysqli('localhost', 'root', 'root', 'kino','3306');
 
 if ($connection->connect_error) {
@@ -9,4 +10,6 @@ if ($connection->connect_error) {
     else {
         echo "Connection successful";
     }
+
+$new = new Saal($connection);
 ?>
