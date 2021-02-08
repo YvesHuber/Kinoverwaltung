@@ -23,8 +23,7 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`Film` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `idFilme_UNIQUE` (`id` ASC) VISIBLE,
-  FULLTEXT INDEX `film_name` () INVISIBLE)
+ `name` varchar(255) NOT NULL AUTO_INCREMENT)
 ENGINE = InnoDB;
 
 
@@ -34,9 +33,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`User` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `iduser_UNIQUE` (`id` ASC) VISIBLE,
-  FULLTEXT INDEX `vorname` () VISIBLE,
-  FULLTEXT INDEX `nachname` () VISIBLE)
+ `vorname` varchar(255) DEFAULT NULL,
+ `nachname` varchar(255) DEFAULT NULL)
 ENGINE = InnoDB;
 
 
@@ -46,19 +44,10 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Saal` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `idSaal_UNIQUE` (`id` ASC) VISIBLE,
-  INDEX `platz_nummer` () VISIBLE,
-  UNIQUE INDEX `zeit` () VISIBLE,
-  CONSTRAINT `film_id_fs`
-    FOREIGN KEY ()
-    REFERENCES `mydb`.`Film` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `user_id_fs`
-    FOREIGN KEY ()
-    REFERENCES `mydb`.`User` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `platz_nummer` varchar(255) DEFAULT NULL,
+  `zeit` varchar(255) DEFAULT NULL,
+  CONSTRAINT `fk_saal_user` FOREIGN KEY (`markers_id`) REFERENCES `User` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_saal_film` FOREIGN KEY (`place_id`) REFERENCES `Film` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
