@@ -2,17 +2,18 @@
 --
 -Verbindung
 --
--Verbindung herstellen</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>260</y><w>210</w><h>120</h></coordinates><panel_attributes>Saal
+-Verbindung herstellen</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>260</y><w>210</w><h>120</h></coordinates><panel_attributes>Saal
 --
 -id Saal
 -id Film
 -id Zeit
 --
--Film Anzeigen</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>240</y><w>210</w><h>140</h></coordinates><panel_attributes>Sitzplätze
+-Film Anzeigen
+-Film Ändern</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>250</y><w>210</w><h>140</h></coordinates><panel_attributes>Sitzplätze
 --
 -id Platz
 -idfs Film
 -id Zeit
 --
 -Plätze Anzeigen
--Platz reservieren</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>140</y><w>60</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>140</y><w>50</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;30;100</additional_attributes></element></diagram>
+-Platz reservieren</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>140</y><w>160</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>140</y><w>120</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;110</additional_attributes></element></diagram>
