@@ -45,7 +45,7 @@ class sitzplatz
         $id = $row['id'];
         echo mysqli_errno($query);
                         
-                        $sql = "UPDATE saal SET user_id_fs=$id WHERE saal_plätze_id_fs='$this->idsaal'AND platz_nummer='$this->idplatz'AND film_id_fs='$this->film';";
+                        $sql = "UPDATE saal SET user_id_fs = $id, besetzt = 't' WHERE saal_plätze_id_fs='$this->idsaal'AND platz_nummer='$this->idplatz'AND film_id_fs='$this->film';";
                         $result = $this->connection->query($sql);
                         echo mysqli_errno($this->connection);
 
