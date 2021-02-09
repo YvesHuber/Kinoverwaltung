@@ -12,24 +12,31 @@
          cursive; font-family: 'Roboto',
          sans-serif;
      }
+     
+     body{
+         text-align: center;
+     }
 
+     form{
+        display: inline-block;
+     }
     
 
 </style>
 
 <body>
 
-    <h1 style="text-align: center; font-size: 50px;  ">Cinema Register</h1>
+    <h1 style="text-align: center; font-size: 50px; color: white; ">Cinema Register</h1>
 
 
         <form method="post" action="Admin.php" class="form-container">
-            <h1>Register Saal</h1>
+            <h1>Register hall</h1>
 
-            <label for="email"><b>Saal Nrs</b></label>
-            <input type="text" class="textbox" id="txt_uname" name="txt_saal" placeholder="Saal Nr" required/>
+            <label for="email"><b>Hall Nr</b></label>
+            <input type="text" class="textbox" id="txt_uname" name="txt_saal" placeholder="Hall Nr" required/>
 
-            <label for="psw"><b>Places in Saal</b></label>
-            <input type="text" class="textbox" id="txt_uname" name="txt_sitze" placeholder="Sitze" required/>
+            <label for="psw"><b>Places in hall</b></label>
+            <input type="text" class="textbox" id="txt_uname" name="txt_sitze" placeholder="Seats" required/>
             <button type="submit" class="btn">Add</button>
         </form>
             

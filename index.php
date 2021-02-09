@@ -24,9 +24,7 @@
 
     body {
         padding: 150px;
-        background-size: cover;
-        background-image: url(https://media.istockphoto.com/vectors/modern-cinema-background-with-realistic-film-strips-movie-production-vector-id1204686197?k=6&m=1204686197&s=170667a&w=0&h=KFJhZWhgNDIsgHC07Psc5POVHeF9pmdqIobUmpq6MSg=);
-        background-repeat: no-repeat;
+       
     }
 </style>
 
@@ -79,9 +77,10 @@ echo "var data = " . json_encode($row->fetch_all(MYSQLI_ASSOC)) . ";";
         title = document.createElement('h1');
         title.innerText = data;
     }*/
-    title1.innerText = data['name'][0];
-    title2.innerText = data['name'][0];
-    title3.innerText = data['name'][0];
+   console.log( alert(data.name[0]));
+   /* title1.innerText = data['name'][0];
+    title2.innerText = data['name'][1];
+    title3.innerText = data['name'][2];*/
 </script>
 
 </html>

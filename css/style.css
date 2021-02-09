@@ -31,7 +31,7 @@
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
+  width: 80%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
@@ -66,4 +66,8 @@
   opacity: 1;
 }
 
-
+body{
+  background-size: cover;
+  background-image: url(https://media.istockphoto.com/vectors/modern-cinema-background-with-realistic-film-strips-movie-production-vector-id1204686197?k=6&m=1204686197&s=170667a&w=0&h=KFJhZWhgNDIsgHC07Psc5POVHeF9pmdqIobUmpq6MSg=);
+  background-repeat: no-repeat;
+}
