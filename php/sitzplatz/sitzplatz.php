@@ -7,7 +7,8 @@ $lastname = ($_POST['txt_pwd']);
 $saal = ($_POST['txt_saal']);
 $place = ($_POST['txt_place']);
 $film = ($_POST['txt_film']);
-
+echo $firstname;
+echo $lastname;
 $user = new sitzplatz($firstname,$lastname,$saal,$place,$film,$connection);
 
 /*$user->Registeruser();*/

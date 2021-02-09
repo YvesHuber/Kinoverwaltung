@@ -40,11 +40,11 @@ class sitzplatz
     public function Register_Place()
     {
         $userfs = "SELECT id FROM user WHERE vorname = '$this->firstname'AND nachname = '$this->lastname';";
-        $query = $this->connection->query($userfs);
-        $row = mysqli_fetch_assoc($userfs);
+        $query = mysqli_query($this->connection,$userfs);
+        $row = mysqli_fetch_assoc($query);
         $id = $row['id'];
         echo mysqli_errno($query);
-        print_r ($id);
+        var_dump ($id);
         echo"tough";
 
         $filmfs = "SELECT name FROM film WHERE name = '$this->film';";
