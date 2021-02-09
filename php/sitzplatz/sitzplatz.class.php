@@ -1,7 +1,7 @@
 <?php
 class sitzplatz
 {
-
+    
     private $firstname;
     private $lastname;
     private $connection;
@@ -48,7 +48,7 @@ class sitzplatz
             $idf = $this->connection->query($filmfs);
 
 
-            $sql = "INSERT INTO saal WHERE (platz_nummer,film_id_fs, saal_id) VALUES ('$this->idplatz',$idf,$id);";
+            $sql = "INSERT INTO saal  ('user_id_fs') VALUES ('$this->idplatz',$idf,$id);";
 
             $result = $this->connection->query($sql);
 
