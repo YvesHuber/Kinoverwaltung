@@ -21,7 +21,7 @@ class sitzplatz
         echo "started";
         $check = false;
         $this->check = $check;
-        if ($this->firstname != "SELECT vorname FROM `user` WHERE (vorname) VALUE ('$this->firstname');" || $this->lastname != "SELECT nachname FROM `user` WHERE (nachname) VALUE ('$this->lastname');") {
+        if ($this->firstname != "SELECT vorname FROM 'user' WHERE (vorname) VALUE ('$this->firstname');" || $this->lastname != "SELECT nachname FROM 'user' WHERE (nachname) VALUE ('$this->lastname');") {
             $this->check = true;
         }
         if ($this->check == true) {
@@ -39,34 +39,31 @@ class sitzplatz
     }
     public function Register_Place()
     {
-            $userfs = "SELECT id FROM `user` WHERE (vorname,nachname) VALUES ('$this->firstname','$this->lastname');";
-            $id = $this->connection->query($userfs);
+        $userfs = "SELECT id FROM user WHERE vorname = '$this->firstname'AND nachname = '$this->lastname';";
+        $id = $this->connection->query($userfs);
+        echo mysqli_errno($this->connection);
+        echo $id;
 
-            $filmfs = "SELECT id FROM `film` WHERE (name) VALUES ('$this->film');";
-            $idf = $this->connection->query($filmfs);
+        $filmfs = "SELECT name FROM film WHERE name = '$this->film';";
+        $idf = $this->connection->query($filmfs);
 
-            $pfs = "SELECT platz_nummer FROM `saal` WHERE (platz_nummer) VALUES ('$this->idplatz');";
-            $idp = $this->connection->query($pfs);
+        $pfs = "SELECT platz_nummer FROM saal WHERE platz_nummer = $this->idplatz;";
+        $idp = $this->connection->query($pfs);
 
-            $sfs = "SELECT saal_plätze_id_fs FROM `saal` WHERE (saal_plätze_id_fs ) VALUES ('$this->idsaal');";
-            $ids = $this->connection->query($sfs);
+        $sfs = "SELECT saal_plätze_id_fs FROM `saal` WHERE saal_plätze_id_fs = $this->idsaal;";
+        $ids = $this->connection->query($sfs);
 
-
-
-            echo $id ;
-
-            if ($this->film == $idf) {
-                if ($this->idplatz == $idp) {
-                    if ($this->idsaal == $ids) {
-                        echo($userfs);
-                        $sql = "UPDATE saal SET (user_id_fs=$id);";
+                        echo"did if";
+                        
+                        $sql = "UPDATE saal SET user_id_fs='$id' WHERE saal_plätze_id_fs=$this->idsaal, platz_nummer=$this->idplatz, film_id_fs=$idf;";
                         $result = $this->connection->query($sql);
+                        echo mysqli_errno($this->connection);
+
 
                         if (!$result) {
                             echo mysqli_error($this->connection);
                             die($this->connection->error);
                         }
-                    }
                 }
             /*
             $sql = "INSERT INTO saal (user_id_fs) VALUES ('$userfs') WHERE platz_nummer = '$this->idplatz', film_id_fs = $idf , saal_id = $id;";
@@ -78,8 +75,8 @@ class sitzplatz
                 die($this->connection->error);
             }
             */
-        }
-    }
+        
+    
 
     public function visualise()
     {
