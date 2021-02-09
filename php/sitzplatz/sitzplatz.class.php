@@ -58,4 +58,11 @@ class sitzplatz
     public function visualise()
     {
     }
+
+    public function saalgenerate()
+    {
+        
+    }
+
+
 }
