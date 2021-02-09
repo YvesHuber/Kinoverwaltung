@@ -27,7 +27,10 @@ CREATE TABLE IF NOT EXISTS `kino`.`film` (
   `name` varchar(255) NOT NULL,
   `zeit` varchar(6) NOT NULL)
 ENGINE = InnoDB;
-
+INSERT INTO `kino`.`film` (`id`, `name`, `zeit`) VALUES
+(1, 'Xmen', '18:00'),
+(2, 'Marley and me', '19:00'),
+(3, 'Endgame', '20:00');
 
 -- -----------------------------------------------------
 -- Table `kino`.`User`
@@ -39,8 +42,22 @@ CREATE TABLE IF NOT EXISTS `kino`.`user` (
   `vorname` varchar(255) NOT NULL,
   `nachname` varchar(255) NOT NULL)
 ENGINE = InnoDB;
+INSERT INTO `kino`.`user` (`id`, `vorname`, `nachname`) VALUES
+(1, 'Yves','Smolders'),
+(2, 'Alex','19:00'),
+(3, 'Andrew','Longitude');
 
 
+CREATE TABLE IF NOT EXISTS `kino`.`saal_plätze` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  `sitze` INT(10) NOT NULL)
+ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `kino`.`saal_plätze` (`sitze`) VALUES
+(50),
+(70),
+(80);
 -- -----------------------------------------------------
 -- Table `kino`.`Saal`
 -- -----------------------------------------------------
@@ -48,22 +65,35 @@ CREATE TABLE IF NOT EXISTS `kino`.`saal` (
   `id` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idSaal_UNIQUE` (`id` ASC),
-  `platz_nummer` INT NOT NULL,
-  `user_id_fs` int(10)  NOT NULL,
+  `platz_nummer` INT(10) NOT NULL,
+  `user_id_fs` int(10),
   `film_id_fs` int(11) NOT NULL,
-  `saal_id` int(11) NOT NULL,
+  `saal_plätze_id_fs` int(11) NOT NULL,
+  `besetzt` char(1) NOT NULL,
   CONSTRAINT `film_id_fs`
     FOREIGN KEY (`film_id_fs`)
-    REFERENCES `kino`.`Film` (`id`)
+    REFERENCES `kino`.`film` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `user_id_fs`
     FOREIGN KEY (`user_id_fs`)
-    REFERENCES `kino`.`User` (`id`)
+    REFERENCES `kino`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION, 
+  CONSTRAINT `saal_plätze_id_fs`
+    FOREIGN KEY (`saal_plätze_id_fs`)
+    REFERENCES `kino`.`saal_plätze` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+
 ENGINE = InnoDB;
 
+
+
+INSERT INTO `kino`.`saal` (`id`, `platz_nummer`, `user_id_fs`, `film_id_fs`, `saal_plätze_id_fs`, `besetzt`) VALUES
+(1,	1, 1, 1, 1, 'f'),
+(2,	2, 2, 2, 2, 'f'),
+(3,	3, 3, 3, 3, 'f');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
