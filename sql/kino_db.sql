@@ -92,8 +92,8 @@ ENGINE = InnoDB;
 
 INSERT INTO `kino`.`saal` (`id`, `platz_nummer`, `user_id_fs`, `film_id_fs`, `saal_plätze_id_fs`, `besetzt`) VALUES
 (1,	1, 1, 1, 1, 'f'),
-(2,	2, 2, 2, 2, 'f'),
-(3,	3, 3, 3, 3, 'f');
+(2,	2, 1, 2, 2, 'f'),
+(3,	3, 1, 3, 3, 'f');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
