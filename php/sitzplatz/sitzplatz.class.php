@@ -40,9 +40,12 @@ class sitzplatz
     public function Register_Place()
     {
         $userfs = "SELECT id FROM user WHERE vorname = '$this->firstname'AND nachname = '$this->lastname';";
-        $id = $this->connection->query($userfs);
-        echo mysqli_errno($this->connection);
-        echo $id;
+        $query = $this->connection->query($userfs);
+        $row = mysqli_fetch_assoc($userfs);
+        $id = $row['id'];
+        echo mysqli_errno($query);
+        print_r ($id);
+        echo"tough";
 
         $filmfs = "SELECT name FROM film WHERE name = '$this->film';";
         $idf = $this->connection->query($filmfs);
@@ -55,7 +58,7 @@ class sitzplatz
 
                         echo"did if";
                         
-                        $sql = "UPDATE saal SET user_id_fs='$id' WHERE saal_plätze_id_fs=$this->idsaal, platz_nummer=$this->idplatz, film_id_fs=$idf;";
+                        $sql = "UPDATE saal SET user_id_fs=$id WHERE saal_plätze_id_fs=$this->idsaal, platz_nummer=$this->idplatz, film_id_fs=$idf;";
                         $result = $this->connection->query($sql);
                         echo mysqli_errno($this->connection);
 
