@@ -39,11 +39,11 @@
         <?php
             require_once("../connection.class.php");
 
-            $sitze = "SELECT platz_nummer FROM saal WHERE saal_plätze_id_fs = 1;";
+            $sitze = "SELECT platz_nummer FROM saal WHERE saal_plätze_id_fs = 2;";
             $result = $connection->query;
             $row = $connection->mysqli_fetch_assoc;
 
-            echo "var data = " . json_encode($row->fetch_all(MYSQLI_ASSOC)) . ";";
+            echo "var data = " . json_encode($result->fetch_all(MYSQLI_ASSOC)) . ";";
         ?>
         let i = 0;
         for (i = 0; i < data.length; i++){
