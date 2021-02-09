@@ -50,11 +50,11 @@ class sitzplatz
         $row_bool =  mysqli_fetch_assoc($query_bool);
         $bool_resut = $row_bool['besetzt'];
 
-        if($bool_resut == 'f'){
+        if ($bool_resut == 'f') {
             $sql = "UPDATE saal SET user_id_fs = $id, besetzt = 't' WHERE saal_plätze_id_fs='$this->idsaal'AND platz_nummer='$this->idplatz'AND film_id_fs='$this->film';";
             $result = $this->connection->query($sql);
             echo mysqli_errno($this->connection);
-        }else{
+        } else {
             echo "dieser Stuhl ist bereits besetzt, wählen sie ein anderes";
         }
 
@@ -62,18 +62,17 @@ class sitzplatz
             echo mysqli_error($this->connection);
             die($this->connection->error);
         }
-        header("Location: sitzplatz.html");
+        header("Location: sitzplatz_site.php");
     }
     public function visualise()
     {
-
     }
 
     public function saalgenerate()
     {
         $count = 0;
-        $idsaal = 3;
-        for ($i = 0; $i <= $idsaal;) {
+        $idsaal = 4;
+        for ($i = 1; $i <= $idsaal;) {
             while ($count < $idsaal) {
 
                 $userfs = "SELECT sitze FROM saal_plätze WHERE id =$i; ";
@@ -82,25 +81,18 @@ class sitzplatz
                 $id = $rows['sitze'];
                 $count++;
                 $i++;
-                echo $id;
-                /*for ($p = 0; $p < $id; $p++)
-                {
-                    echo $p;
+                echo $id . " ";
 
-                    echo $i;
-                    /*
-                    $sql = "INSERT INTO ";
-
+                for ($p = 1; $p <= $id; $p++) {
+                    $sql = "INSERT INTO saal (platz_nummer, user_id_fs,film_id_fs,saal_plätze_id_fs,besetzt) VALUES ($p,1,1,$i,'f');";
                     $result = $this->connection->query($sql);
 
                     if (!$result) {
                         echo mysqli_error($this->connection);
                         die($this->connection->error);
                     }
-                    
                 }
-                */
-                
+                $p = 1;
             }
         }
     }
