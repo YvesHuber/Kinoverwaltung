@@ -35,7 +35,13 @@
             <button type="submit" class="btn">Login</button>
         </form>
 
+    <script>
+        <?php
+            require_once("../connection.class.php");
 
+            $sitze = "SELECT "
+        ?>
+    </script>
 </body>
 
 
