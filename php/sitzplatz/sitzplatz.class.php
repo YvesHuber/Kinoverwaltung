@@ -84,7 +84,7 @@ class sitzplatz
                 echo $id . " ";
 
                 for ($p = 1; $p <= $id; $p++) {
-                    $sql = "INSERT INTO saal (platz_nummer, user_id_fs,film_id_fs,saal_plätze_id_fs,besetzt) VALUES ($p,1,1,$i,'f');";
+                    $sql = "INSERT INTO saal (platz_nummer, user_id_fs, film_id_fs, saal_plätze_id_fs, besetzt) VALUES ($p,1,1,$i,'f');";
                     $result = $this->connection->query($sql);
 
                     if (!$result) {

@@ -39,8 +39,19 @@
         <?php
             require_once("../connection.class.php");
 
-            $sitze = "SELECT "
+            $sitze = "SELECT platz_nummer FROM saal WHERE saal_plätze_id_fs = 1;";
+            $result = $connection->query;
+            $row = $connection->mysqli_fetch_assoc;
+
+            echo "var data = " . json_encode($result->fetch_all(MYSQLI_ASSOC)) . ";";
         ?>
+        let i = 0;
+        for (i = 0; i < data.length; i++){
+            let chair_image = document.createElement('img');
+            const chair_num = document.createElement("P");
+            img.src = "../../Bilder/stuhl.svg";
+            chair_num.innerText = data;
+        }
     </script>
 </body>
 
