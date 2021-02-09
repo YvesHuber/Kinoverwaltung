@@ -71,8 +71,8 @@ class sitzplatz
     public function saalgenerate()
     {
         $count = 0;
-        $idsaal = 4;
-        for ($i = 1; $i <= $idsaal;) {
+        $idsaal = 3;
+        for ($i = 1; $i < $idsaal;) {
             while ($count < $idsaal) {
 
                 $userfs = "SELECT sitze FROM saal_plätze WHERE id =$i; ";
@@ -80,18 +80,22 @@ class sitzplatz
                 $rows = mysqli_fetch_assoc($querys);
                 $id = $rows['sitze'];
                 $count++;
-                $i++;
+                
                 echo $id . " ";
-
+                $i++;
                 for ($p = 1; $p <= $id; $p++) {
-                    $sql = "INSERT INTO saal (platz_nummer, user_id_fs, film_id_fs, saal_plätze_id_fs, besetzt) VALUES ($p,1,1,$i,'f');";
+                    
+                    $sql = "INSERT INTO saal (platz_nummer, user_id_fs, film_id_fs, saal_plätze_id_fs, besetzt) VALUES ($p,NULL,1,$i,'f');";
                     $result = $this->connection->query($sql);
 
                     if (!$result) {
                         echo mysqli_error($this->connection);
                         die($this->connection->error);
                     }
+                    
+                    
                 }
+                echo $i;
                 $p = 1;
             }
         }
