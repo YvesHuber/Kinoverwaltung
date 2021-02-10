@@ -80,11 +80,11 @@ class sitzplatz
                 $rows = mysqli_fetch_assoc($querys);
                 $id = $rows['sitze'];
                 $count++;
-                
+
                 echo $id . " ";
-                
+
                 for ($p = 1; $p <= $id; $p++) {
-                    
+
                     $sql = "INSERT INTO saal (platz_nummer, user_id_fs, film_id_fs, saal_plätze_id_fs, besetzt) VALUES ($p,NULL,1,$i,'f');";
                     $result = $this->connection->query($sql);
 
@@ -92,8 +92,6 @@ class sitzplatz
                         echo mysqli_error($this->connection);
                         die($this->connection->error);
                     }
-                    
-                    
                 }
                 echo $i;
                 $p = 1;
@@ -102,7 +100,7 @@ class sitzplatz
     }
     public function saalupdate()
     {
-        $sql = "DROP * FROM saal SET user_id_fs=NULL AND besetzt='f';";
+        $sql = "UPDATE saal SET user_id_fs=NULL , besetzt='f' WHERE besetzt ='t';";
         $result = $this->connection->query($sql);
 
         if (!$result) {
