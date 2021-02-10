@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../Kinoverwaltung/css/style.css">
 </head>
 <script>
     function openForm() {
@@ -24,7 +24,6 @@
 
     body {
         padding: 150px;
-       
     }
 </style>
 
@@ -51,36 +50,37 @@
     </div>
 
 
+    <h1 style="text-align: center; font-size: 50px;"><a href="php/sitzplatz/sitzplatz_site.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;" id="title1">hello</a></h1>
+    <h1 style="text-align: center; font-size: 50px;"><a href="php/filme/sitzplatz_site_2.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;" id="title2"></a></h1>
+    <h1 style="text-align: center; font-size: 50px;"><a href="php/filme/sitzplatz_site_3.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;" id="title3"></a></h1>
+    <script>
+        <?php
+        require_once("../Kinoverwaltung/PHP/connection.class.php");
 
-    <h1 style="text-align: center; font-size: 50px;" id="1"><a href="php/sitzplatz/sitzplatz_site.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;"></a></h1>
-    <h1 style="text-align: center; font-size: 50px;" id="2"><a href="php/filme/sitzplatz_site_2.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;"></a></h1>
-    <h1 style="text-align: center; font-size: 50px;" id="3"><a href="php/filme/sitzplatz_site_3.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;"></a></h1>
+        $sitze = "SELECT name FROM film;";
+        $result = $connection->query($sitze);
+
+        echo "var data = " . json_encode($result->fetch_all(MYSQLI_ASSOC)) . ";";
+
+        ?>
+        console.log(data);
+        alert(data[0]['name']);
+        let i = 0;
+        const title1 = document.getElementById("title1");
+        const title2 = document.getElementById("title2");
+        const title3 = document.getElementById("title3");
+
+        title1.innerText = data[0]['name'];
+        title2.innerText = data[1]['name'];
+        title3.innerText = data[2]['name'];
+
+        /* for the future if no time to automatically do movies
+        for (i = 0; i < data.length; i++){
+            title = document.createElement('h1');
+            title.innerText = data;
+        }*/
+    </script>
 </body>
-<?php
-require_once("../connection.class.php");
 
-$sitze = "SELECT name FROM film;";
-$result = $connection->query;
-$row = $connection->mysqli_fetch_assoc;
-
-echo "var data = " . json_encode($row->fetch_all(MYSQLI_ASSOC)) . ";";
-
-?>
-<script>
-    let i = 0;
-    const title1 = document.getElementById("1");
-    const title2 = document.getElementById("2");
-    const title3 = document.getElementById("3");
-
-    /* for the future if no time to automatically do movies
-    for (i = 0; i < data.length; i++){
-        title = document.createElement('h1');
-        title.innerText = data;
-    }*/
-   console.log( alert(data.name[0]));
-   /* title1.innerText = data['name'][0];
-    title2.innerText = data['name'][1];
-    title3.innerText = data['name'][2];*/
-</script>
 
 </html>
