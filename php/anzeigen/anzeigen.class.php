@@ -3,7 +3,6 @@
 
 class Visualise
 {
-    private $saal_nr;
     public function __construct($connection)
     {
         $this->connection = $connection;

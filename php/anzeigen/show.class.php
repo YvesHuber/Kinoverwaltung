@@ -2,7 +2,6 @@
 
 class Show{
 
-
     private $saal_nr;
     private $connection;
     public function __construct($connection, $saal_nr)
@@ -13,8 +12,9 @@ class Show{
 
     public function seats_of_saal()
     {
-
-        $userfs = "SELECT sitze FROM saal_plätze WHERE id = $this->saal_nr;";
+        $saal_number = $this->saal_nr;
+        
+        $userfs = "SELECT sitze FROM saal_plätze WHERE id = $saal_number;";
         $querys = mysqli_query($this->connection, $userfs);
         $rows = mysqli_fetch_assoc($querys);
         $id = $rows['sitze'];
@@ -23,6 +23,7 @@ class Show{
         $query_bool = mysqli_query($this->connection, $bool);
         $row = $this->connection->fetch_assoc();
         $bool_official = $row['besetzt'];
+
         for ($p = 1; $p <= $id; $p++) {
             if($bool_official[$p]['besetzt'] == "t"){
                 echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
