@@ -1,13 +1,12 @@
 <?php
 
 
-class visualise 
+class Visualise
 {
-
+    private $saal_nr;
     public function __construct($connection)
     {
         $this->connection = $connection;
-
     }
 
 
@@ -24,12 +23,19 @@ class visualise
                 $id = $rows['sitze'];
                 $count++;
 
+                $bool = "SELECT besetzt FROM saal WHERE besetzt='t';";
+                $query_bool = mysqli_query($this->connection, $bool);
+                $row = $this->connection->fetch_assoc();
+                $bool_official = $row['besetzt'];
+
                 for ($p = 1; $p <= $id; $p++) {
 
-                    echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
-                    echo "<t class = seatid>". $p ."</t>";
-                    if ($p % 10 == 0){
-                        echo "<br>";
+                    if ($bool_official[$p]['besetzt'] == "t") {
+                        echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                        echo "<t class = besetzt>" . $p . "</t>";
+                    } else {
+                        echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                        echo "<t class = seatid>" . $p . "</t>";
                     }
                 }
                 echo "<br>";

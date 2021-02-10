@@ -56,24 +56,15 @@
         <button type="submit" class="btn">Login</button>
     </form>
 
-    <script>
         <?php
-        require_once("../connection.class.php");
+        require_once("../../Projekt_Kino/Kinoverwaltung/PHP/connection.class.php");
+        require_once("../../Projekt_Kino/Kinoverwaltung/PHP/anzeigen/show.class.php");
 
-        $sitze = "SELECT platz_nummer FROM saal WHERE saal_plätze_id_fs = 1;";
-        $result = $connection->query;
-        $row = $connection->mysqli_fetch_assoc;
+        $seat = new Show($connection, 1);
 
-        echo "var data = " . json_encode($row->fetch_all(MYSQLI_ASSOC)) . ";";
+        $info = $seat->seats_of_saal();
+
         ?>
-        let i = 0;
-        for (i = 0; i < data.length; i++) {
-            let chair_image = document.createElement('img');
-            const chair_num = document.createElement("P");
-            img.src = "../../Bilder/stuhl.svg";
-            chair_num.innerText = data;
-        }
-    </script>
 </body>
 
 

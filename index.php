@@ -64,7 +64,7 @@
 
         ?>
         console.log(data);
-        alert(data[0]['name']);
+        //alert(data[0]['name']);
         let i = 0;
         const title1 = document.getElementById("title1");
         const title2 = document.getElementById("title2");

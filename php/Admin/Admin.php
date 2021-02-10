@@ -9,7 +9,7 @@ $places = ($_POST['txt_sitze']);
 $film = ($_POST['txt_film']);
 $time = ($_POST['txt_time']);
 $user = new sitzplatz($firstname,$lastname,$saal,$places,$film,$connection);
-$vis = new visualise($connection);
+$vis = new Visualise($connection);
 $Admin = new Admin($connection);
 /*
 if ($saal != "" && $places != ""){
