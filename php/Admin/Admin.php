@@ -27,7 +27,6 @@ if (isset($_POST["saalup"])){
 if (isset($_POST["sitze"])){
 
     $vis->sitze();
-    
 }
 if ($film != "" && $time != "") {
     $Admin->Register_film($film, $time);
