@@ -21,6 +21,8 @@
         display: inline-block;
         border-radius: 25px;
      }
+
+     
     
 
 </style>
@@ -38,7 +40,7 @@
 
             <label for="psw"><b>Places in hall</b></label>
             <input type="text" class="textbox" id="txt_uname" name="txt_sitze" placeholder="Seats" required/>
-            <button type="submit" class="btn">Add</button>
+            <button type="submit" class="btn" style="border-radius: 25px;">Add</button>
         </form>
             
         <form style=" background-color:rgba(255, 255, 255, 0.4); color: black;" method="post" action="Admin.php" class="form-container">
@@ -51,17 +53,17 @@
             <label for="psw"><b>Time of Movie</b></label>
             <input type="text" class="textbox" id="txt_place" name="txt_time" placeholder="Time" required/>
 
-            <button type="submit" class="btn">Add</button>
+            <button type="submit" class="btn" style="border-radius: 25px;">Add</button>
         </form>
 
-        <form action="Admin.php" method="post">
-            <input type="submit" name="saalgen" value="Generate Database"/>
+        <form action="Admin.php" method="post" style="display: inline-block; ">
+            <input type="submit" name="saalgen" value="Generate Database" style="background-color: red; color: white; padding: 16px 20px; border: none; border-radius: 25px;"/>
          </form>
-         <form action="Admin.php" method="post">
-            <input type="submit" name="saalup" value="Update Database"/>
+         <form action="Admin.php" method="post" style="display: inline-block;">
+            <input type="submit" name="saalup" value="Update Database" style="background-color: red; color: white; padding: 16px 20px; border: none;border-radius: 25px;"/>
          </form>
-         <form action="Admin.php" method="post">
-            <input type="submit" name="sitze" value="Update Database"/>
+         <form action="Admin.php" method="post" style="display: inline-block;">
+            <input type="submit" name="sitze" value="Show Seats" style="background-color: red; color: white; padding: 16px 20px; border: none;border-radius: 25px;"/>
          </form>
         
 </body>
