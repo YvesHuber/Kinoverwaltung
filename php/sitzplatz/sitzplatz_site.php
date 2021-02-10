@@ -42,15 +42,15 @@
         <input type="text" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Lastname" required />
 
 
-        <label style="" for="psw"><b>Saal Nr <br></b></label>
+        <label for="psw"><b>Saal Nr <br></b></label>
         <input type="number" class="textbox" id="txt_saal" name="txt_saal" placeholder="Saal Nr" required />
 
 
-        <label style="" for="psw"><b><br><br> Place Nr<br></b></label>
+        <label for="psw"><b><br><br> Place Nr<br></b></label>
         <input type="number" class="textbox" id="txt_place" name="txt_place" placeholder="Place Nr" required />
 
 
-        <label style="" for="psw"><b><br><br> Film Nr <br></b></label>
+        <label for="psw"><b><br><br> Film Nr <br></b></label>
         <input type="number" class="textbox" id="txt_film" name="txt_film" placeholder="Film Nr" required />
 
         <button type="submit" class="btn">Login</button>
