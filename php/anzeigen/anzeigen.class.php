@@ -22,19 +22,12 @@ class Visualise
                 $id = $rows['sitze'];
                 $count++;
 
-                $bool = "SELECT besetzt FROM saal WHERE besetzt='t';";
-                $query_bool = mysqli_query($this->connection, $bool);
-                $row = $this->connection->fetch_assoc();
-                $bool_official = $row['besetzt'];
-
                 for ($p = 1; $p <= $id; $p++) {
 
-                    if ($bool_official[$p]['besetzt'] == "t") {
-                        echo "<img style = width = 4% height = 4% src = /Bilder/stuhl.svg>";
-                        echo "<t class = besetzt>" . $p . "</t>";
-                    } else {
-                        echo "<img style = width = 4% height = 4% src = /Bilder/stuhl.svg>";
-                        echo "<t class = seatid>" . $p . "</t>";
+                    echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                    echo "<t class = seatid>". $p ."</t>";
+                    if ($p % 10 == 0){
+                        echo "<br>";
                     }
                 }
                 echo "<br>";
@@ -44,4 +37,24 @@ class Visualise
             }
         }
     }
+    public function choose($ids)
+    {
+        $userfs = "SELECT sitze FROM saal_plätze WHERE id =2; ";
+                $querys = mysqli_query($this->connection, $userfs);
+                $rows = mysqli_fetch_assoc($querys);
+                $id = $rows['sitze'];
+                for ($p = 1; $p <= $id; $p++) {
+
+                    echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                    echo "<t class = seatid>". $p ."</t>";
+                    if ($p % 10 == 0){
+                        echo "<br>";
+                    }
+                }
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
+                $p = 1;
+    }
+
 }
