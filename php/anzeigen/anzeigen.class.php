@@ -26,12 +26,15 @@ class visualise
 
                 for ($p = 1; $p <= $id; $p++) {
 
-                    echo $p . " ";
+                    echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                    echo "<t class = seatid>". $p ."</t>";
                     if ($p % 10 == 0){
                         echo "<br>";
                     }
                 }
-                
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
                 $p = 1;
             }
         }

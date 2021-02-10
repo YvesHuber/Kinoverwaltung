@@ -1,4 +1,5 @@
 <?php
+echo "<link rel=stylesheet href=/css/style.css>";
 require_once('Admin.class.php');
 require_once('../connection.class.php');
 require_once('../sitzplatz/sitzplatz.class.php');

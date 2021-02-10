@@ -23,7 +23,7 @@ class Login
 
         for ($i = 0; $i < count($decoded); $i++) {
             if ($this->username == ($decoded)[$i][0]['Adminusername'] && $this->password == ($decoded)[$i][0]['Adminpassword']) {
-                header("Location: http://localhost/php/Admin/Admin.html");
+                header("Location: ../php/Admin/Admin.html");
                 exit;
                 echo "You are now logged in Welcome " . $this->username;
 
