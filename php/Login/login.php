@@ -7,8 +7,8 @@ $password = ($_POST['txt_pwd']);
 $user = new Login($username, $password);
 $user->compare_values();
 if ($check == true) {
-    header("localhost/php/Admin/Admin.html");
+    header("http://localhost/php/Admin/Admin.html");
     exit;
 } elseif ($check == false) {
-    header("localhost/index.html");
+    header("http://localhost/index.php");
 }
