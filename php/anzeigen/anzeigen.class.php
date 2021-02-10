@@ -30,10 +30,10 @@ class Visualise
                 for ($p = 1; $p <= $id; $p++) {
 
                     if ($bool_official[$p]['besetzt'] == "t") {
-                        echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                        echo "<img style = width = 4% height = 4% src = /Bilder/stuhl.svg>";
                         echo "<t class = besetzt>" . $p . "</t>";
                     } else {
-                        echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                        echo "<img style = width = 4% height = 4% src = /Bilder/stuhl.svg>";
                         echo "<t class = seatid>" . $p . "</t>";
                     }
                 }

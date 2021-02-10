@@ -57,8 +57,8 @@
     </form>
 
         <?php
-        require_once("../../Projekt_Kino/Kinoverwaltung/PHP/connection.class.php");
-        require_once("../../Projekt_Kino/Kinoverwaltung/PHP/anzeigen/show.class.php");
+        require_once("/PHP/connection.class.php");
+        require_once("/Kinoverwaltung/PHP/anzeigen/show.class.php");
 
         $seat = new Show($connection, 1);
 
