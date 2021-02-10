@@ -102,34 +102,12 @@ class sitzplatz
     }
     public function saalupdate()
     {
-        $count = 0;
-        $idsaal = 3;
-        for ($i = 0; $i < $idsaal;) {
-            while ($count < $idsaal) {
-                $i++;
-                $userfs = "SELECT sitze FROM saal_plätze WHERE id =$i; ";
-                $querys = mysqli_query($this->connection, $userfs);
-                $rows = mysqli_fetch_assoc($querys);
-                $id = $rows['sitze'];
-                $count++;
-                
-                echo $id . " ";
-                
-                for ($p = 1; $p <= $id; $p++) {
-                    
-                    $sql = "UPDATE saal SET(user_id_fs, film_id_fs, besetzt) VALUES (NULL,1,'f');";
-                    $result = $this->connection->query($sql);
+        $sql = "DROP * FROM saal SET user_id_fs=NULL AND besetzt='f';";
+        $result = $this->connection->query($sql);
 
-                    if (!$result) {
-                        echo mysqli_error($this->connection);
-                        die($this->connection->error);
-                    }
-                    
-                    
-                }
-                echo $i;
-                $p = 1;
-            }
+        if (!$result) {
+            echo mysqli_error($this->connection);
+            die($this->connection->error);
         }
     }
 }

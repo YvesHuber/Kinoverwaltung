@@ -10,8 +10,6 @@ $film = ($_POST['txt_film']);
 echo $firstname;
 echo $lastname;
 $user = new sitzplatz($firstname,$lastname,$saal,$place,$film,$connection);
-//$user->saalgenerate();
-$user->saalupdate();
 /*$user->Registeruser();*/
-//$user->Register_Place();
+$user->Register_Place();
 echo "done";

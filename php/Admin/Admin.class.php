@@ -1,7 +1,8 @@
 <?php
 
-class Admin {
-    
+class Admin
+{
+
 
     public function __construct($connection)
     {
@@ -9,7 +10,7 @@ class Admin {
     }
 
 
-    public function Register_saal($saalid,$sitze)
+    public function Register_saal($saalid, $sitze)
     {
         $sql = "INSERT INTO saal1 (sitze, saal_id)VALUES ('$saalid','$sitze');";
         $result = $this->connection->query($sql);
@@ -19,7 +20,7 @@ class Admin {
             die($this->connection->error);
         }
     }
-    public function Register_film($filmid,$time)
+    public function Register_film($filmid, $time)
     {
         $sql = "INSERT INTO film (name, zeit)VALUES ('$filmid','$time');";
 
@@ -31,5 +32,4 @@ class Admin {
         }
         header("Location: Admin.html");
     }
-
 }

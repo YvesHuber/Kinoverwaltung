@@ -1,18 +1,25 @@
 <?php
 require_once('Admin.class.php');
 require_once('../connection.class.php');
-
+require_once('../sitzplatz/sitzplatz.class.php');
 $saal = ($_POST['txt_saal']);
 $places = ($_POST['txt_sitze']);
 $film = ($_POST['txt_film']);
 $time = ($_POST['txt_time']);
-
+$user = new sitzplatz($firstname,$lastname,$saal,$places,$film,$connection);
 $Admin = new Admin($connection);
 /*
 if ($saal != "" && $places != ""){
     $Admin->Register_saal($saal,$places);
 }*/
-if ($film != "" && $time != "") 
-{
-    $Admin->Register_film($film,$time);
+if (isset($_POST["saalgen"])){
+
+    $user->saalgenerate();
+}
+if (isset($_POST["saalup"])){
+
+    $user->saalupdate();
+}
+if ($film != "" && $time != "") {
+    $Admin->Register_film($film, $time);
 }

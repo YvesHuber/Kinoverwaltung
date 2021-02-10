@@ -89,13 +89,6 @@ CREATE TABLE IF NOT EXISTS `kino`.`saal` (
 ENGINE = InnoDB;
 
 
-
-INSERT INTO `kino`.`saal` (`id`, `platz_nummer`, `user_id_fs`, `film_id_fs`, `saal_plätze_id_fs`, `besetzt`) VALUES
-(1,	1, 1, 1, 1, 'f'),
-(2,	2, 1, 2, 2, 'f'),
-(3,	3, 1, 3, 3, 'f');
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
