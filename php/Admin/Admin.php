@@ -21,6 +21,11 @@ if (isset($_POST["saalgen"])){
 if (isset($_POST["saalup"])){
 
     $user->saalupdate();
+
+}
+if (isset($_POST["sitze"])){
+
+    $vis->sitze();
     
 }
 if ($film != "" && $time != "") {

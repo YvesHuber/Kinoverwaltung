@@ -24,13 +24,14 @@ class visualise
                 $id = $rows['sitze'];
                 $count++;
 
-                echo $id . " ";
-
                 for ($p = 1; $p <= $id; $p++) {
 
-                    echo $p;
+                    echo $p . " ";
+                    if ($p % 10 == 0){
+                        echo "<br>";
+                    }
                 }
-                echo $i;
+                
                 $p = 1;
             }
         }
