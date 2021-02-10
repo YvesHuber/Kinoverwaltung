@@ -2,37 +2,16 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/andrew.css">
 </head>
 
-<style>
-     @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto:ital,wght@1,700&display=swap');
-     *{
-         font-family: 'Balsamiq Sans',
-         cursive; font-family: 'Roboto',
-         sans-serif;
-     }
-     
-     body{
-         text-align: center;
-     }
 
-     form{
-        display: inline-block;
-        border-radius: 25px;
-     }
+<body class="admin">
 
-     
-    
-
-</style>
-
-<body>
-
-    <h1 style="text-align: center; font-size: 50px; color: white; ">Cinema Register</h1>
+    <h1 class="cine_reg">Cinema Register</h1>
 
 
-        <form style=" background-color:rgba(255, 255, 255, 0.35); color: black; " method="post" action="Admin.php" class="form-container">
+        <form method="post" action="Admin.php" class="form-container register">
             <h1>Register hall</h1>
 
             <label for="email"><b>Hall Nr</b></label>
@@ -43,7 +22,7 @@
             <button type="submit" class="btn" style="border-radius: 25px;">Add</button>
         </form>
             
-        <form style=" background-color:rgba(255, 255, 255, 0.4); color: black;" method="post" action="Admin.php" class="form-container">
+        <form method="post" action="Admin.php" class="form-container register">
             <h1>Register Movie</h1>
             
             <label for="psw"><b>Movie name</b></label>
@@ -56,14 +35,14 @@
             <button type="submit" class="btn" style="border-radius: 25px;">Add</button>
         </form>
 
-        <form action="Admin.php" method="post" style="display: inline-block; ">
-            <input type="submit" name="saalgen" value="Generate Database" style="background-color: red; color: white; padding: 16px 20px; border: none; border-radius: 25px;"/>
+        <form action="Admin.php" method="post" class="db_btn">
+            <input type="submit" name="saalgen" value="Generate Database" class="db_btn"/>
          </form>
-         <form action="Admin.php" method="post" style="display: inline-block;">
-            <input type="submit" name="saalup" value="Update Database" style="background-color: red; color: white; padding: 16px 20px; border: none;border-radius: 25px;"/>
+         <form action="Admin.php" method="post" class="db_btn">
+            <input type="submit" name="saalup" value="Update Database" class="db_btn"/>
          </form>
-         <form action="Admin.php" method="post" style="display: inline-block;">
-            <input type="submit" name="sitze" value="Show Seats" style="background-color: red; color: white; padding: 16px 20px; border: none;border-radius: 25px;"/>
+         <form action="Admin.php" method="post" class="db_btn">
+            <input type="submit" name="sitze" value="Show Seats" class="db_btn"/>
          </form>
         
 </body>

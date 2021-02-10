@@ -8,27 +8,44 @@ $saal = ($_POST['txt_saal']);
 $places = ($_POST['txt_sitze']);
 $film = ($_POST['txt_film']);
 $time = ($_POST['txt_time']);
-$user = new sitzplatz($firstname,$lastname,$saal,$places,$film,$connection);
+$user = new sitzplatz($firstname, $lastname, $saal, $places, $film, $connection);
 $vis = new Visualise($connection);
 $Admin = new Admin($connection);
 /*
 if ($saal != "" && $places != ""){
     $Admin->Register_saal($saal,$places);
 }*/
-if (isset($_POST["saalgen"])){
+if (isset($_POST["saalgen"])) {
 
     $user->saalgenerate();
 }
-if (isset($_POST["saalup"])){
+if (isset($_POST["saalup"])) {
 
     $user->saalupdate();
-
 }
-if (isset($_POST["sitze"])){
+if (isset($_POST["sitze"])) {
 
     $vis->sitze();
-    
 }
 if ($film != "" && $time != "") {
     $Admin->Register_film($film, $time);
 }
+?>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/andrew.css">
+</head>
+
+<body>
+    <form action="Admin.html">
+        <input type="submit" value="Back to admin page" class="adminBack"/>
+    </form>
+</body>
+
+</html>
