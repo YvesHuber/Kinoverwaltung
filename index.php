@@ -44,7 +44,15 @@
     <h1 class="header"><a href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
     <script>
         <?php
+        
         require_once("../Kinoverwaltung/PHP/connection.class.php");
+        require_once("./php/anzeigen/anzeigen.class.php");
+        require_once("./php/sitzplatz/sitzplatz.class.php");
+        
+        $vis = new Visualise($connection);
+        $vis->autodelete();
+        
+
 
         $sitze = "SELECT name FROM film;";
         $result = $connection->query($sitze);
