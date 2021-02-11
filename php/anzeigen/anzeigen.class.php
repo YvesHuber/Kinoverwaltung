@@ -57,18 +57,18 @@ class Visualise
             $bool = "SELECT platz_nummer, saal_plätze_id_fs FROM saal WHERE besetzt = 't' AND saal_plätze_id_fs = $num ;";
             $query_bool = mysqli_query($this->connection, $bool);
             $row = mysqli_fetch_assoc($query_bool);
-            var_dump($row);
+            //var_dump($row);
 
             for ($p = 1; $p <= $id; $p++) {
                 if ($row['saal_plätze_id_fs'] == "$num" && $row['platz_nummer'] == "$p") {
 
-                    echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                    echo "<img class = 'seat' src = ../../Bilder/stuhl.svg>";
                     echo "<t style='color: red;'>" . $p . "</t>";
                     if ($p % 10 == 0) {
                         echo "<br>";
                     }
                 } else {
-                    echo "<img style = width = 4% height = 4% src = ../../Bilder/stuhl.svg>";
+                    echo "<img class = 'seat' src = ../../Bilder/stuhl.svg>";
                     echo "<t class = seatid style='color: white;'>" . $p . "</t>";
                     if ($p % 10 == 0) {
                         echo "<br>";

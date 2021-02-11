@@ -98,7 +98,7 @@ class sitzplatz
         }
         header("Location:http://localhost/php/Admin/Admin.html");
     }
-    public function saalupdate($object)
+    public function saalupdate()
     {
         $sql = "UPDATE saal SET user_id_fs=NULL , besetzt='f' WHERE besetzt ='t';";
         $result = $this->connection->query($sql);
