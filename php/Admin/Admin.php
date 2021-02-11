@@ -22,7 +22,7 @@ if (isset($_POST["saalgen"])) {
 }
 if (isset($_POST["saalup"])) {
 
-    $user->saalupdate();
+    $user->saalupdate(1);
 }
 if (isset($_POST["sitze"])) {
 
@@ -34,6 +34,9 @@ if (isset($_POST["sitzeshow"])) {
 }
 if ($film != "" && $time != "") {
     $Admin->Register_film($film, $time);
+}
+if (isset($_POST["test"])){
+    $vis->autodelete();
 }
 ?>
 

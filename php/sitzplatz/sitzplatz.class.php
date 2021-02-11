@@ -98,16 +98,16 @@ class sitzplatz
         }
         header("Location:http://localhost/php/Admin/Admin.html");
     }
-    public function saalupdate()
+    public function saalupdate($num)
     {
-        $sql = "UPDATE saal SET user_id_fs=NULL , besetzt='f' WHERE besetzt ='t';";
+        $sql = "UPDATE saal SET user_id_fs=NULL , besetzt='f' WHERE besetzt ='t' AND saal_plätze_id_fs = '$num';";
         $result = $this->connection->query($sql);
 
         if (!$result) {
             echo mysqli_error($this->connection);
             die($this->connection->error);
         }
-        header("Location:http://localhost/php/Admin/Admin.html");
+        
     }
     public function checkuser()
     {
