@@ -18,7 +18,6 @@ class sitzplatz
 
     public function Registeruser()
     {
-        echo "started";
         $check = false;
         $this->check = $check;
         if ($this->firstname != "SELECT vorname FROM 'user' WHERE (vorname) VALUE ('$this->firstname');" || $this->lastname != "SELECT nachname FROM 'user' WHERE (nachname) VALUE ('$this->lastname');") {
@@ -99,7 +98,7 @@ class sitzplatz
         }
         header("Location:http://localhost/php/Admin/Admin.html");
     }
-    public function saalupdate()
+    public function saalupdate($object)
     {
         $sql = "UPDATE saal SET user_id_fs=NULL , besetzt='f' WHERE besetzt ='t';";
         $result = $this->connection->query($sql);
@@ -109,5 +108,20 @@ class sitzplatz
             die($this->connection->error);
         }
         header("Location:http://localhost/php/Admin/Admin.html");
+    }
+    public function checkuser()
+    {
+        $result = $this->connection->query("SELECT vorname FROM user WHERE vorname = '$this->firstname'");
+        if ($result->num_rows == 0) {
+                $result2 = $this->connection->query("SELECT nachname FROM user WHERE nachname = '$this->lastname'");
+            if ($result2->num_rows == 0) {
+                return true;
+            } else {
+                return false;
+        }
+        } else {
+            return false;
+        }
+        $this->connection->close();
     }
 }
