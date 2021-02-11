@@ -12,7 +12,7 @@ session_start();
 $_SESSION['saal'] = 3;
 $_SESSION['film'] = 3;
 ?>
-    <h1 style="color: white; font-size: 50px">Cinema Register</h1>
+    <h1 class="cine_reg">Cinema Register</h1>
 
 
 
