@@ -84,3 +84,16 @@ body{
     font-size: 50px;
     color: white;
 }
+
+.btn{
+  border-radius: 25px;
+}
+
+.time{
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 25px;
+}

@@ -19,7 +19,7 @@
 
             <label for="psw"><b>Places in hall</b></label>
             <input type="text" class="textbox" id="txt_uname" name="txt_sitze" placeholder="Seats" required/>
-            <button type="submit" class="btn" style="border-radius: 25px;">Add</button>
+            <button type="submit" class="btn">Add</button>
         </form>
             
         <form method="post" action="Admin.php" class="form-container register">
@@ -32,7 +32,7 @@
             <label for="psw"><b>Time of Movie</b></label>
             <input type="text" class="textbox" id="txt_place" name="txt_time" placeholder="Time" required/>
 
-            <button type="submit" class="btn" style="border-radius: 25px;">Add</button>
+            <button type="submit" class="btn">Add</button>
         </form>
 
         <form action="Admin.php" method="post" class="db_btn">
@@ -46,7 +46,7 @@
          </form>
          <form action="Admin.php" method="post" style="display: inline-block;">
             <input type="text" class="textbox" id="zahl" name="zahl" placeholder="Time" required/>
-            <input type="submit" name="zahl" value="Show Seats" style="background-color: red; color: white; padding: 16px 20px; border: none;border-radius: 25px;"/>
+            <input class="db_btn" type="submit" name="zahl" value="Show Seats"/>
          </form>
         
 </body>
