@@ -8,6 +8,8 @@
 
 <body class="admin">
     <?php
+            require_once("../connection.class.php");
+            require_once("../anzeigen/anzeigen.class.php");
 session_start();
 $_SESSION['saal'] = 1;
 $_SESSION['film'] = 1;
@@ -30,12 +32,14 @@ $_SESSION['film'] = 1;
 
         <button type="submit" class="btn">Login</button>
     </form>
-
+<?php
+$vis = new Visualise($connection);
+$vis->choose(1);
+?>
 
 </body>
 <?php
-        require_once("/PHP/connection.class.php");
-        require_once("/Kinoverwaltung/PHP/anzeigen/show.class.php");
+
         echo "test";
 
         $seat = new Show($connection, 1);
