@@ -48,7 +48,7 @@ class Visualise
     }
     public function choose($num)
     {
-        echo $num;
+        echo "<br>";
             $userfs = "SELECT sitze FROM saal_plätze WHERE id = $num ; ";
             $querys = mysqli_query($this->connection, $userfs);
             $rows = mysqli_fetch_assoc($querys);

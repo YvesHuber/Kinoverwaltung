@@ -45,16 +45,5 @@ $vis->choose(1);
 ?>
 
 </body>
-<?php
-
-        echo "test";
-
-        $seat = new Show($connection, 1);
-
-        $info = $seat->seats_of_saal();
-
-        ?>
-
-
 
 </html>
