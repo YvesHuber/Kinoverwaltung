@@ -63,7 +63,10 @@ form{
 }
 
 .db_btn{
+    
     display: inline-block;
+    
+
 }
 
 input.db_btn{
@@ -96,4 +99,22 @@ body{
   padding: 16px 20px;
   border: none;
   border-radius: 25px;
+}
+
+#generate{
+  position: absolute;
+  left: 710px;
+  top: 60%;
+}
+
+#update{
+  position: absolute;
+  left: 880px;
+  top: 60%
+}
+
+#show{
+  position: absolute;
+  left: 1040px;
+  top: 590px;
 }
