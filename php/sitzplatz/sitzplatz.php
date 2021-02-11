@@ -9,7 +9,6 @@ $place = ($_POST['txt_place']);
 $film = $_SESSION['film'];
 $user = new sitzplatz($firstname, $lastname, $saal, $place, $film, $connection);
 
-
 $check = $user->checkuser();
 if ($check = true) {
     $user->Registeruser();

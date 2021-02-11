@@ -74,6 +74,7 @@ class Visualise
                         echo "<br>";
                     }
                 }
+                
             }
             echo "<br>";
             echo "<br>";
@@ -83,6 +84,19 @@ class Visualise
 
     public function autodelete()
     {
+        $film = "SELECT id from film LIMIT 1;";
+        $filmm = "SELECT MAX(id) FROM `film` LIMIT 1;";
 
-    }
+        $querys = mysqli_query($this->connection, $film);
+
+        $querym = mysqli_query($this->connection, $filmm);
+        $rows = mysqli_fetch_assoc($querys);
+
+        $rowm = mysqli_fetch_assoc($querym);
+        $id = $rows['id'];
+
+        $max = $rowm['id'];
+        echo $id;
+        echo $max;
+}
 }
