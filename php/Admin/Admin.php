@@ -9,7 +9,7 @@ $places = ($_POST['txt_sitze']);
 $film = ($_POST['txt_film']);
 $time = ($_POST['txt_time']);
 $zahl = ($_POST['zahl']);
-$user = new sitzplatz($firstname,$lastname,$saal,$places,$film,$connection);
+$user = new sitzplatz($firstname, $lastname, $saal, $places, $film, $connection);
 $vis = new Visualise($connection);
 $Admin = new Admin($connection);
 /*
@@ -28,10 +28,9 @@ if (isset($_POST["sitze"])) {
 
     $vis->sitze();
 }
-if (isset($_POST["sitzeshow"])){
+if (isset($_POST["sitzeshow"])) {
 
     $vis->choose($zahl);
-    
 }
 if ($film != "" && $time != "") {
     $Admin->Register_film($film, $time);
@@ -50,7 +49,7 @@ if ($film != "" && $time != "") {
 
 <body>
     <form action="Admin.html">
-        <input type="submit" value="Back to admin page" class="adminBack"/>
+        <input type="submit" value="Back to admin page" class="adminBack" />
     </form>
 </body>
 

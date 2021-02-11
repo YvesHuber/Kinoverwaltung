@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -8,10 +7,10 @@
 
 <body class="admin">
     <?php
-session_start();
-$_SESSION['saal'] = 1;
-$_SESSION['film'] = 1;
-?>
+    session_start();
+    $_SESSION['saal'] = 1;
+    $_SESSION['film'] = 1;
+    ?>
     <h1 class="cine_reg">Cinema Register</h1>
 
 
@@ -37,15 +36,15 @@ $_SESSION['film'] = 1;
 
 </body>
 <?php
-        require_once("/PHP/connection.class.php");
-        require_once("/Kinoverwaltung/PHP/anzeigen/show.class.php");
-        echo "test";
+require_once("/PHP/connection.class.php");
+require_once("/Kinoverwaltung/PHP/anzeigen/show.class.php");
+echo "test";
 
-        $seat = new Show($connection, 1);
+$seat = new Show($connection, 1);
 
-        $info = $seat->seats_of_saal();
+$info = $seat->seats_of_saal();
 
-        ?>
+?>
 
 
 

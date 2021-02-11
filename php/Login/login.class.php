@@ -26,10 +26,7 @@ class Login
                 header("Location: /php/Admin/Admin.html");
                 exit;
                 echo "You are now logged in Welcome " . $this->username;
-
-
-            }
-            else {
+            } else {
                 header("Location: http://localhost/index.php");
             }
         }
