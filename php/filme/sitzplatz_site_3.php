@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <link rel="stylesheet" href="../../css/andrew.css">
     <style>
-        .seat{
+        .seat {
             width: 4%;
             height: 4%;
         }
@@ -16,12 +15,12 @@
 <body class="admin">
     <?php
     $id = 3;
-            require_once("../connection.class.php");
-            require_once("../anzeigen/anzeigen.class.php");
-session_start();
-$_SESSION['saal'] = $id;
-$_SESSION['film'] = $id;
-?>
+    require_once("../connection.class.php");
+    require_once("../anzeigen/anzeigen.class.php");
+    session_start();
+    $_SESSION['saal'] = $id;
+    $_SESSION['film'] = $id;
+    ?>
     <h1 class="cine_reg">Cinema Register</h1>
 
 
@@ -40,10 +39,10 @@ $_SESSION['film'] = $id;
 
         <button type="submit" class="btn">Login</button>
     </form>
-<?php
-$vis = new Visualise($connection);
-$vis->choose($id);
-?>
+    <?php
+    $vis = new Visualise($connection);
+    $vis->choose($id);
+    ?>
 
 </body>
 

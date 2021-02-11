@@ -113,12 +113,12 @@ class sitzplatz
     {
         $result = $this->connection->query("SELECT vorname FROM user WHERE vorname = '$this->firstname'");
         if ($result->num_rows == 0) {
-                $result2 = $this->connection->query("SELECT nachname FROM user WHERE nachname = '$this->lastname'");
+            $result2 = $this->connection->query("SELECT nachname FROM user WHERE nachname = '$this->lastname'");
             if ($result2->num_rows == 0) {
                 return true;
             } else {
                 return false;
-        }
+            }
         } else {
             return false;
         }

@@ -7,17 +7,15 @@ $lastname = ($_POST['txt_pwd']);
 $saal = $_SESSION['saal'];
 $place = ($_POST['txt_place']);
 $film = $_SESSION['film'];
-$user = new sitzplatz($firstname,$lastname,$saal,$place,$film,$connection);
+$user = new sitzplatz($firstname, $lastname, $saal, $place, $film, $connection);
 
 
 $check = $user->checkuser();
-if ($check = true)
-{
+if ($check = true) {
     $user->Registeruser();
     $user->Register_Place();
-}
-else {
-$user->Register_Place();
+} else {
+    $user->Register_Place();
 }
 
 session_destroy();
