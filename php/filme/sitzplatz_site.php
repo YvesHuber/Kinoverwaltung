@@ -30,6 +30,9 @@ $_SESSION['film'] = 1;
 
         <button type="submit" class="btn">Login</button>
     </form>
+    <form action="../../index.php">
+        <input type="submit" name="back_to_index" value="Back to homepage" class="db_btn" id="back">
+    </form>
 
 
 </body>
