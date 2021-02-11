@@ -15,11 +15,12 @@
 
 <body class="admin">
     <?php
+    $id = 1;
             require_once("../connection.class.php");
             require_once("../anzeigen/anzeigen.class.php");
 session_start();
-$_SESSION['saal'] = 1;
-$_SESSION['film'] = 1;
+$_SESSION['saal'] = $id;
+$_SESSION['film'] = $id;
 ?>
     <h1 class="cine_reg">Cinema Register</h1>
 
@@ -41,20 +42,9 @@ $_SESSION['film'] = 1;
     </form>
 <?php
 $vis = new Visualise($connection);
-$vis->choose(1);
+$vis->choose($id);
 ?>
 
 </body>
-<?php
-
-        echo "test";
-
-        $seat = new Show($connection, 1);
-
-        $info = $seat->seats_of_saal();
-
-        ?>
-
-
 
 </html>
