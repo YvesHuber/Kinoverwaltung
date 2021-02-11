@@ -18,7 +18,6 @@ class sitzplatz
 
     public function Registeruser()
     {
-        echo "started";
         $check = false;
         $this->check = $check;
         if ($this->firstname != "SELECT vorname FROM 'user' WHERE (vorname) VALUE ('$this->firstname');" || $this->lastname != "SELECT nachname FROM 'user' WHERE (nachname) VALUE ('$this->lastname');") {
