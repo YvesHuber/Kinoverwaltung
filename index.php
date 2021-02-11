@@ -14,22 +14,10 @@
     }
 </script>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto:ital,wght@1,700&display=swap');
 
-    * {
-        font-family: 'Balsamiq Sans', cursive;
-        font-family: 'Roboto', sans-serif;
-    }
+<body class="index">
 
-    body {
-        padding: 150px;
-    }
-</style>
-
-<body>
-
-    <h1 style="font-family: 'Balsamiq Sans', cursive; font-family: 'Roboto', sans-serif; font-size: 60px; text-align: center; color: white">Cinema Register</h1>
+    <h1 class="header_60px">Cinema Register</h1>
 
     <button class="open-button" onclick="openForm()">Login as Admin </button>
 
@@ -50,9 +38,9 @@
     </div>
 
 
-    <h1 style="text-align: center; font-size: 50px;"><a href="PHP/sitzplatz/sitzplatz_site.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;" id="title1">hello</a></h1>
-    <h1 style="text-align: center; font-size: 50px;"><a href="PHP/filme/sitzplatz_site_2.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;" id="title2"></a></h1>
-    <h1 style="text-align: center; font-size: 50px;"><a href="PHP/filme/sitzplatz_site_3.php" style="font-family: 'Balsamiq Sans', cursive;font-family: 'Roboto', sans-serif; color: red;" id="title3"></a></h1>
+    <h1 class="header"><a href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
+    <h1 class="header"><a href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>
+    <h1 class="header"><a href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
     <script>
         <?php
         require_once("../Kinoverwaltung/PHP/connection.class.php");
