@@ -2,37 +2,19 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/andrew.css">
 </head>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto:ital,wght@1,700&display=swap');
 
-    * {
-        font-family: 'Balsamiq Sans',
-            cursive;
-        font-family: 'Roboto',
-            sans-serif;
-    }
-
-    body {
-        text-align: center;
-    }
-
-    form {
-        display: inline-block;
-
-
-    }
 </style>
 
-<body>
+<body class="admin">
 
-    <h1 style="font-size: 50px; color: white;">Cinema Register</h1>
+    <h1 class="cine_reg">Cinema Register</h1>
 
 
 
-    <form style="background-color: rgb(255, 255, 255, 0.7); border-radius: 25px" method="post" action="sitzplatz.php" class="form-container">
+    <form method="post" action="sitzplatz.php" class="form-container register">
         <h1>Login</h1>
 
         <label for="email"><b>Firstname</b></label>

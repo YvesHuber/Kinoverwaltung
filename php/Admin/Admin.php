@@ -16,16 +16,15 @@ $Admin = new Admin($connection);
 if ($saal != "" && $places != ""){
     $Admin->Register_saal($saal,$places);
 }*/
-if (isset($_POST["saalgen"])){
+if (isset($_POST["saalgen"])) {
 
     $user->saalgenerate();
 }
-if (isset($_POST["saalup"])){
+if (isset($_POST["saalup"])) {
 
     $user->saalupdate();
-
 }
-if (isset($_POST["sitze"])){
+if (isset($_POST["sitze"])) {
 
     $vis->sitze();
 }
@@ -37,3 +36,22 @@ if (isset($_POST["sitzeshow"])){
 if ($film != "" && $time != "") {
     $Admin->Register_film($film, $time);
 }
+?>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/andrew.css">
+</head>
+
+<body>
+    <form action="Admin.html">
+        <input type="submit" value="Back to admin page" class="adminBack"/>
+    </form>
+</body>
+
+</html>
