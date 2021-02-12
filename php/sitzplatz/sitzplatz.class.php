@@ -1,4 +1,5 @@
 <?php
+
 /**
  * sitzplatz
  */
@@ -8,7 +9,7 @@ class sitzplatz
     private $firstname;
     private $lastname;
     private $connection;
-    
+
     /**
      * __construct
      *
@@ -29,7 +30,6 @@ class sitzplatz
         $this->film = $filmid;
         $this->connection = $connection;
     }
-    
     /**
      * Registeruser
      *
@@ -54,7 +54,7 @@ class sitzplatz
                 die($this->connection->error);
             }
         }
-    }    
+    }
     /**
      * Register_Place
      *
@@ -87,7 +87,7 @@ class sitzplatz
         }
         header("Location: http://localhost/index.php");
     }
-    
+
     /**
      * saalgenerate
      *
@@ -123,7 +123,7 @@ class sitzplatz
             }
         }
         header("Location:http://localhost/php/Admin/Admin.html");
-    }    
+    }
     /**
      * saalupdate
      *
@@ -139,8 +139,7 @@ class sitzplatz
             echo mysqli_error($this->connection);
             die($this->connection->error);
         }
-        
-    }    
+    }
     /**
      * checkuser
      *
