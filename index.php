@@ -37,9 +37,12 @@
         </form>
     </div>
 
-    <h1 ><a class="header" href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
-    <h1 ><a class="header" href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>
-    <h1 ><a class="header" href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
+    <h1 class="header"><a href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
+    <h2 class="" id="time"></h2>
+    <h1 class="header"><a href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>
+    <h2 class="" id="time2"></h2>
+    <h1 class="header"><a href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
+    <h2 class="" id="time3"></h2>
     <script>
         <?php
         
@@ -50,13 +53,9 @@
         $vis = new Visualise($connection);
         $vis->autodelete();
         
-
-
-        $sitze = "SELECT name FROM film;";
+        $sitze = "SELECT name, zeit FROM film;";
         $result = $connection->query($sitze);
-
         echo "var data = " . json_encode($result->fetch_all(MYSQLI_ASSOC)) . ";";
-
         ?>
         console.log(data);
         //alert(data[0]['name']);
@@ -64,10 +63,15 @@
         const title1 = document.getElementById("title1");
         const title2 = document.getElementById("title2");
         const title3 = document.getElementById("title3");
-
+        const time1 = document.getElementById("time");
+        const time2 = document.getElementById("time2");
+        const time3 = document.getElementById("time3");
         title1.innerText = data[0]['name'];
         title2.innerText = data[1]['name'];
         title3.innerText = data[2]['name'];
+        time1.innerText = data[0]['zeit'];
+        time2.innerText = data[1]['zeit'];
+        time3.innerText = data[2]['zeit'];
 
         /* for the future if no time to automatically do movies
         for (i = 0; i < data.length; i++){
