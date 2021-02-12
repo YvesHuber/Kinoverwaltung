@@ -2,6 +2,7 @@
 <html>
 
 <head>
+<title>Reservation XMen</title>
     <link rel="stylesheet" href="../../css/andrew.css">
     <style>
         .seat {
@@ -9,7 +10,7 @@
             height: 4%;
         }
     </style>
-
+<link rel="favicon" href="../../Bilder/stuhl.svg">
 </head>
 
 <body class="admin">

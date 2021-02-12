@@ -4,6 +4,8 @@
 <head>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/andrew.css">
+    <link rel="favicon" href="./Bilder/stuhl.svg">
+    <title>Kino.php</title>
 </head>
 <script>
     function openForm() {
@@ -36,17 +38,18 @@
             <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-
+    <div class =movie>
     <h1 class="header"><a href="php/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
     <h2 class="" id="time"></h2>
     <h1 class="header"><a href="php/filme/sitzplatz_site_2.php" id="title2"></a></h1>
     <h2 class="" id="time2"></h2>
     <h1 class="header"><a href="php/filme/sitzplatz_site_3.php" id="title3"></a></h1>
     <h2 class="" id="time3"></h2>
+</div>
     <script>
         <?php
         
-        require_once("../Kinoverwaltung/php/connection.class.php");
+        require_once("./php/connection.class.php");
         require_once("./php/anzeigen/anzeigen.class.php");
         require_once("./php/sitzplatz/sitzplatz.class.php");
         
