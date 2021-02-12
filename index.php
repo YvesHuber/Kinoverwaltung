@@ -34,7 +34,7 @@
             <input type="password" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Password" required />
 
             <button type="submit" class="btn">Login</button>
-            <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            <button type="submit" class="btn cancel" onclick="closeForm()" style="background-color: red;" >Close</button>
         </form>
     </div>
 
