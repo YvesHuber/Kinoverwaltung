@@ -37,9 +37,9 @@
         </form>
     </div>
 
-    <h1 class="header"><a href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
-    <h1 class="header"><a href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>
-    <h1 class="header"><a href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
+    <h1 ><a class="header" href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
+    <h1 ><a class="header" href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>
+    <h1 ><a class="header" href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
     <script>
         <?php
         
