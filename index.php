@@ -22,7 +22,6 @@
 
     <button class="open-button" onclick="openForm()">Login as Admin </button>
 
-
     <div class="form-popup" id="myForm">
         <form method="post" action="/php/Login/login.php" class="form-container">
             <h1>Login</h1>
@@ -37,7 +36,6 @@
             <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-
 
     <h1 class="header"><a href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
     <h1 class="header"><a href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>

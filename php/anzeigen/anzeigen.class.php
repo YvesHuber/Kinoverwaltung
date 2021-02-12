@@ -1,14 +1,28 @@
 <?php
 
 
+/**
+ * Visualise
+ */
 class Visualise
 {
+    /**
+     * __construct
+     *
+     * @param  mixed $connection
+     * @return void
+     */
     public function __construct($connection)
     {
         $this->connection = $connection;
     }
 
 
+    /**
+     * sitze
+     *
+     * @return void
+     */
     public function sitze()
     {
         $idsaal = 3;
@@ -55,6 +69,7 @@ class Visualise
      */
     public function choose($num)
     {
+        $array = array();
         echo "<br>";
         $userfs = "SELECT sitze FROM saal_plätze WHERE id = $num ; ";
         $querys = mysqli_query($this->connection, $userfs);
@@ -63,20 +78,34 @@ class Visualise
 
         $bool = "SELECT platz_nummer, saal_plätze_id_fs FROM saal WHERE besetzt = 't' AND saal_plätze_id_fs = $num ;";
         $query_bool = mysqli_query($this->connection, $bool);
-        $row = mysqli_fetch_assoc($query_bool);
-        //var_dump($row);
 
-        for ($p = 1; $p <= $id; $p++) {
+        if ($query_bool) {
+            if (mysqli_num_rows($query_bool) > 0) {
+                while ($row = mysqli_fetch_assoc($query_bool)) {
+                    $array[] =  $row["platz_nummer"];
+                }
+            }
+        }
+        var_dump($array);
+        $p = 1;
+        $count=0;
+
+        do {
             echo "<img class = 'seat' src = ../../Bilder/stuhl.svg>";
-            if ($row['saal_plätze_id_fs'] == "$num" && $row['platz_nummer'] == "$p") {
+            if ($row['saal_plätze_id_fs'] == "$num"  && $array[$count] == "$p") {
                 echo "<t style='color: red;'>" . $p . "</t>";
+                $count++;
+                
             } else {
                 echo "<t class = seatid style='color: white;'>" . $p . "</t>";
             }
             if ($p % 10 == 0) {
                 echo "<br>";
             }
-        }
+            $p++;
+            strval($count);
+                echo $count;
+        } while ($p <= $id);
         echo "<br>";
         echo "<br>";
         echo "<br>";
@@ -84,6 +113,11 @@ class Visualise
     }
 
 
+    /**
+     * autodelete
+     *
+     * @return void
+     */
     public function autodelete()
     {
         $film = "SELECT id from film LIMIT 1;";
@@ -101,6 +135,7 @@ class Visualise
 
 
         while ($id <= $max) {
+
             //get time
             $idtime = "SELECT zeit from film WHERE id = '$id';";
             $querry = mysqli_query($this->connection, $idtime);

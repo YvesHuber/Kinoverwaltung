@@ -1,11 +1,25 @@
 <?php
+/**
+ * sitzplatz
+ */
 class sitzplatz
 {
 
     private $firstname;
     private $lastname;
     private $connection;
-
+    
+    /**
+     * __construct
+     *
+     * @param  mixed $firstname
+     * @param  mixed $lastname
+     * @param  mixed $saalid
+     * @param  mixed $placeid
+     * @param  mixed $filmid
+     * @param  mixed $connection
+     * @return void
+     */
     public function __construct($firstname, $lastname, $saalid, $placeid, $filmid, $connection)
     {
         $this->firstname = $firstname;
@@ -15,7 +29,12 @@ class sitzplatz
         $this->film = $filmid;
         $this->connection = $connection;
     }
-
+    
+    /**
+     * Registeruser
+     *
+     * @return void
+     */
     public function Registeruser()
     {
         $check = false;
@@ -35,7 +54,12 @@ class sitzplatz
                 die($this->connection->error);
             }
         }
-    }
+    }    
+    /**
+     * Register_Place
+     *
+     * @return void
+     */
     public function Register_Place()
     {
         $userfs = "SELECT id FROM user WHERE vorname = '$this->firstname'AND nachname = '$this->lastname';";
@@ -63,10 +87,12 @@ class sitzplatz
         }
         header("Location: http://localhost/index.php");
     }
-    public function visualise()
-    {
-    }
-
+    
+    /**
+     * saalgenerate
+     *
+     * @return void
+     */
     public function saalgenerate()
     {
         $count = 0;
@@ -97,7 +123,13 @@ class sitzplatz
             }
         }
         header("Location:http://localhost/php/Admin/Admin.html");
-    }
+    }    
+    /**
+     * saalupdate
+     *
+     * @param  mixed $num
+     * @return void
+     */
     public function saalupdate($num)
     {
         $sql = "UPDATE saal SET user_id_fs=NULL , besetzt='f' WHERE besetzt ='t' AND saal_plätze_id_fs = '$num';";
@@ -108,7 +140,12 @@ class sitzplatz
             die($this->connection->error);
         }
         
-    }
+    }    
+    /**
+     * checkuser
+     *
+     * @return void
+     */
     public function checkuser()
     {
         $result = $this->connection->query("SELECT vorname FROM user WHERE vorname = '$this->firstname'");
