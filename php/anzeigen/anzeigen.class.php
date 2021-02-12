@@ -75,27 +75,22 @@ class Visualise
         $querys = mysqli_query($this->connection, $userfs);
         $rows = mysqli_fetch_assoc($querys);
         $id = $rows['sitze'];
-
         $bool = "SELECT platz_nummer, saal_plätze_id_fs FROM saal WHERE besetzt = 't' AND saal_plätze_id_fs = $num ;";
         $query_bool = mysqli_query($this->connection, $bool);
-
         if ($query_bool) {
             if (mysqli_num_rows($query_bool) > 0) {
                 while ($row = mysqli_fetch_assoc($query_bool)) {
-                    $array[] =  $row["platz_nummer"];
+                    $array[] =  intval($row["platz_nummer"]);
                 }
             }
         }
-        var_dump($array);
         $p = 1;
         $count=0;
-
         do {
             echo "<img class = 'seat' src = ../../Bilder/stuhl.svg>";
-            if ($row['saal_plätze_id_fs'] == "$num"  && $array[$count] == "$p") {
+            if ($array[$count] == $p) {
                 echo "<t style='color: red;'>" . $p . "</t>";
                 $count++;
-                
             } else {
                 echo "<t class = seatid style='color: white;'>" . $p . "</t>";
             }
@@ -103,8 +98,6 @@ class Visualise
                 echo "<br>";
             }
             $p++;
-            strval($count);
-                echo $count;
         } while ($p <= $id);
         echo "<br>";
         echo "<br>";
