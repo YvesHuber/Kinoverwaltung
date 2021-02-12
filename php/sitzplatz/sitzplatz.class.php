@@ -61,7 +61,7 @@ class sitzplatz
             echo mysqli_error($this->connection);
             die($this->connection->error);
         }
-        header("Location: sitzplatz_site.php");
+        header("Location: http://localhost/index.php");
     }
     public function visualise()
     {

@@ -46,7 +46,7 @@ class Visualise
             $p = 1;
         }
     }
-        
+
     /**
      * choose
      *
@@ -67,19 +67,14 @@ class Visualise
         //var_dump($row);
 
         for ($p = 1; $p <= $id; $p++) {
+            echo "<img class = 'seat' src = ../../Bilder/stuhl.svg>";
             if ($row['saal_plätze_id_fs'] == "$num" && $row['platz_nummer'] == "$p") {
-
-                echo "<img class = 'seat' src = ../../Bilder/stuhl.svg>";
                 echo "<t style='color: red;'>" . $p . "</t>";
-                if ($p % 10 == 0) {
-                    echo "<br>";
-                }
             } else {
-                echo "<img class = 'seat' src = ../../Bilder/stuhl.svg>";
                 echo "<t class = seatid style='color: white;'>" . $p . "</t>";
-                if ($p % 10 == 0) {
-                    echo "<br>";
-                }
+            }
+            if ($p % 10 == 0) {
+                echo "<br>";
             }
         }
         echo "<br>";
@@ -87,6 +82,7 @@ class Visualise
         echo "<br>";
         $p = 1;
     }
+
 
     public function autodelete()
     {
@@ -97,15 +93,14 @@ class Visualise
         $rows = mysqli_fetch_assoc($querys);
         $id = $rows['id'];
 
-        
+
         $filmm = "SELECT id FROM `film` WHERE id = 3;";
         $querym = mysqli_query($this->connection, $filmm);
         $rowm = mysqli_fetch_assoc($querym);
         $max = $rowm['id'];
 
 
-        while ($id <= $max)
-        {
+        while ($id <= $max) {
             //get time
             $idtime = "SELECT zeit from film WHERE id = '$id';";
             $querry = mysqli_query($this->connection, $idtime);
@@ -118,9 +113,8 @@ class Visualise
             $timern = date('H:i');
 
             //compare
-            if ($timern >= $time)
-            {
-                $new = new sitzplatz("","","","","",$this->connection);
+            if ($timern >= $time) {
+                $new = new sitzplatz("", "", "", "", "", $this->connection);
                 $new->saalupdate($id);
             }
             $id++;

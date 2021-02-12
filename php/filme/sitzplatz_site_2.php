@@ -25,7 +25,7 @@
 
 
 
-    <form method="post" action="sitzplatz.php" class="form-container register">
+    <form method="post" action="../sitzplatz/sitzplatz.php" class="form-container register">
         <h1>Login</h1>
 
         <label for="email"><b>Firstname</b></label>
