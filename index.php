@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/andrew.css">
     
 </head>
 <script>
@@ -37,23 +38,24 @@
         </form>
     </div>
 
-    <h1><a class="header" href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
+    <h1 class="header"><a href="PHP/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
     <h2 class="showtime" id="time"></h2>
-    <h1><a class="header" href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>
+    <h1 class="header"><a href="PHP/filme/sitzplatz_site_2.php" id="title2"></a></h1>
     <h2 class="showtime" id="time2"></h2>
-    <h1><a class="header" href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
+    <h1 class="header"><a href="PHP/filme/sitzplatz_site_3.php" id="title3"></a></h1>
     <h2 class="showtime" id="time3"></h2>
     <script>
+
         <?php
         
-        require_once("../Kinoverwaltung/PHP/connection.class.php");
+        require_once("./php/connection.class.php");
         require_once("./php/anzeigen/anzeigen.class.php");
         require_once("./php/sitzplatz/sitzplatz.class.php");
         
         $vis = new Visualise($connection);
         $vis->autodelete();
         
-        $sitze = "SELECT name, zeit FROM film;";
+        $sitze = "SELECT name,zeit FROM film;";
         $result = $connection->query($sitze);
         echo "var data = " . json_encode($result->fetch_all(MYSQLI_ASSOC)) . ";";
         ?>
