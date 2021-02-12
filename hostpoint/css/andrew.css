@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto:ital,wght@1,700&display=swap");
 
 * {
-  font-family: "Balsamiq Sans", cursive;
+  font-family: "Balsamiq Sans";
   font-family: "Roboto", sans-serif;
 }
 
@@ -38,6 +38,8 @@
   margin-bottom: 10px;
   opacity: 0.8;
 }
+
+
 
 .adminBack {
   position: absolute;
@@ -128,7 +130,4 @@ body {
   color: white;
   right: 0;
   bottom: 0;
-}
-.movie{
-text-decoration: none;
 }

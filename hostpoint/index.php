@@ -4,8 +4,7 @@
 <head>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/andrew.css">
-    <link rel="favicon" href="./Bilder/kino.png">
-    <title>Kino.php</title>
+    
 </head>
 <script>
     function openForm() {
@@ -35,18 +34,18 @@
             <input type="password" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Password" required />
 
             <button type="submit" class="btn">Login</button>
-            <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            <button type="submit" class="btn cancel" onclick="closeForm()" style="background-color: red;" >Close</button>
         </form>
     </div>
-    <div class =movie>
-    <h1 class="header"><a href="php/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
-    <h2 class="" id="time"></h2>
-    <h1 class="header"><a href="php/filme/sitzplatz_site_2.php" id="title2"></a></h1>
-    <h2 class="" id="time2"></h2>
-    <h1 class="header"><a href="php/filme/sitzplatz_site_3.php" id="title3"></a></h1>
-    <h2 class="" id="time3"></h2>
-</div>
+
+    <h1 ><a class="header" href="./php/sitzplatz/sitzplatz_site.php" id="title1">hello</a></h1>
+    <h2 class="showtime" id="time"></h2>
+    <h1 ><a class="header" href="./php/filme/sitzplatz_site_2.php" id="title2"></a></h1>
+    <h2 class="showtime" id="time2"></h2>
+    <h1 ><a class="header" href="./php/filme/sitzplatz_site_3.php" id="title3"></a></h1>
+    <h2 class="showtime" id="time3"></h2>
     <script>
+
         <?php
         
         require_once("./php/connection.class.php");
@@ -56,12 +55,11 @@
         $vis = new Visualise($connection);
         $vis->autodelete();
         
-        $sitze = "SELECT name, zeit FROM film;";
+        $sitze = "SELECT name,zeit FROM film;";
         $result = $connection->query($sitze);
         echo "var data = " . json_encode($result->fetch_all(MYSQLI_ASSOC)) . ";";
         ?>
         console.log(data);
-        //alert(data[0]['name']);
         let i = 0;
         const title1 = document.getElementById("title1");
         const title2 = document.getElementById("title2");
@@ -76,11 +74,6 @@
         time2.innerText = data[1]['zeit'];
         time3.innerText = data[2]['zeit'];
 
-        /* for the future if no time to automatically do movies
-        for (i = 0; i < data.length; i++){
-            title = document.createElement('h1');
-            title.innerText = data;
-        }*/
     </script>
 </body>
 

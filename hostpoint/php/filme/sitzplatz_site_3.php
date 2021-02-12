@@ -40,6 +40,8 @@
 
         <button type="submit" class="btn">Login</button>
     </form>
+    <br>
+    <br>
     <form action="../../index.php">
         <input type="submit" name="back_to_index" value="Back to homepage" class="db_btn" id="back">
     </form>

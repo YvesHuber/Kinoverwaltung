@@ -29,6 +29,7 @@
         <label for="psw"><b><br><br> Place Nr<br></b></label>
         <input type="number" class="textbox" id="txt_place" name="txt_place" placeholder="Place Nr" required />
 
+
         <button type="submit" class="btn">Login</button>
     </form>
     <form action="../../index.php">
@@ -40,7 +41,6 @@
 <?php
 require_once("/PHP/connection.class.php");
 require_once("/Kinoverwaltung/PHP/anzeigen/show.class.php");
-echo "test";
 
 $seat = new Show($connection, 1);
 
