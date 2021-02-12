@@ -14,6 +14,8 @@ $vis = new Visualise($connection);
 $Admin = new Admin($connection);
 echo "<head>
 <link rel='stylesheet' href='../../css/andrew.css'>
+<link rel='favicon' href='../../Bilder/kino.png'>
+<title>Admin Seatshow</title>
 <style>
     .seat {
         width: 4%;

@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="../../css/andrew.css">
-    <link rel="favicon" href="../../Bilder/stuhl.svg">
+    <link rel="favicon" href="../../Bilder/kino.png">
     <title>Reservation XMen</title>
 </head>
 

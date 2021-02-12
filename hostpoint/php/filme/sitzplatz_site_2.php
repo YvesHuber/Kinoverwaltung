@@ -10,7 +10,7 @@
             height: 4%;
         }
     </style>
-<link rel="favicon" href="../../Bilder/stuhl.svg">
+<link rel="favicon" href="../../Bilder/kino.png">
 </head>
 
 <body class="admin">

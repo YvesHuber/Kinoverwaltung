@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/andrew.css">
-    <link rel="favicon" href="./Bilder/stuhl.svg">
+    <link rel="favicon" href="./Bilder/kino.png">
     <title>Kino.php</title>
 </head>
 <script>
