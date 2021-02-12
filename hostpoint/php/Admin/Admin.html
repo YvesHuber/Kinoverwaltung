@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/andrew.css">
+</head>
+
+
+<body class="admin">
+
+    <h1 class="cine_reg">Cinema Register</h1>
+
+
+    <form method="post" action="Admin.php" class="form-container register">
+        <h1>Register hall</h1>
+
+        <label for="email"><b>Hall Nr</b></label>
+        <input type="text" class="textbox" id="txt_uname" name="txt_saal" placeholder="Hall Nr" required />
+
+        <label for="psw"><b>Places in hall</b></label>
+        <input type="text" class="textbox" id="txt_uname" name="txt_sitze" placeholder="Seats" required />
+        <button type="submit" class="btn">Add</button>
+    </form>
+
+    <form method="post" action="Admin.php" class="form-container register">
+        <h1>Register Movie</h1>
+
+        <label for="psw"><b>Movie name</b></label>
+        <input type="text" class="textbox" id="txt_saal" name="txt_film" placeholder="Movie name" required />
+
+
+        <label for="psw"><b>Time of Movie</b></label>
+        <input type="text" class="textbox" id="txt_place" name="txt_time" placeholder="Time" required />
+
+        <button type="submit" class="btn">Add</button>
+    </form>
+
+    <form action="Admin.php" method="post" class="db_btn">
+        <input type="submit" name="saalgen" value="Generate Database" class="db_btn" id="generate" />
+    </form>
+    <form action="Admin.php" method="post" class="db_btn">
+        <input type="submit" name="saalup" value="Update Database" class="db_btn" id="update" />
+    </form>
+    <form action="Admin.php" method="post" class="db_btn">
+        <input type="submit" name="sitze" value="Show Seats" class="db_btn" id="show" />
+    </form>
+    <form action="Admin.php" method="post" class="db_btn">
+        <input type="submit" name="test" value="test" class="db_btn" />
+    </form>
+    <form action="../../index.php">
+        <input type="submit" name="back_to_index" value="Back to homepage" class="db_btn" id="back">
+    </form>
+
+</body>
+
+
+
+
+</html>
