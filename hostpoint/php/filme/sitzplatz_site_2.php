@@ -3,13 +3,14 @@
 
 <head>
     <link rel="stylesheet" href="../../css/andrew.css">
+    <title>Reservation Marley and Me</title>
     <style>
         .seat {
             width: 4%;
             height: 4%;
         }
     </style>
-
+<link rel="favicon" href="../../Bilder/stuhl.svg">
 </head>
 
 <body class="admin">
