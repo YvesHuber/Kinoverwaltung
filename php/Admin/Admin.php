@@ -12,6 +12,16 @@ $zahl = ($_POST['zahl']);
 $user = new sitzplatz($firstname, $lastname, $saal, $places, $film, $connection);
 $vis = new Visualise($connection);
 $Admin = new Admin($connection);
+echo "<head>
+<link rel='stylesheet' href='../../css/andrew.css'>
+<style>
+    .seat {
+        width: 4%;
+        height: 4%;
+    }
+</style>
+
+</head>";
 /*
 if ($saal != "" && $places != ""){
     $Admin->Register_saal($saal,$places);
